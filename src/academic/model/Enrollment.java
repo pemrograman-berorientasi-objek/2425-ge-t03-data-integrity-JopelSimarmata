@@ -45,9 +45,6 @@ public class Enrollment {
         System.out.println(this.Nim+"|"+this.CodeCourse + "|" + this.TahunAjaran + "|" + this.Semester + "|" + this.nilai);
     }
 
-    public void setCourse(this.){
-        
-    }
 
     public void setStudents(Student student){
         this.student = student;

@@ -15,6 +15,7 @@ public class Driver2 {
     public static void main(String[] _args) {
 
         Scanner scn = new Scanner(System.in);
+        Boolean cek = true;
         
         ArrayList<Course> daftarMataKuliah = new ArrayList<>();
         ArrayList<Student> daftarMahasiswa = new ArrayList<>();
@@ -51,18 +52,34 @@ public class Driver2 {
             }
         }
 
-        //buatlah fungsi mengecek apakah mahasiswa sudah terdaftar di kelas tersebut
-        //buatlah fungsi mengecek apakah mahasiswa sudah terdaftar di kelas tersebut dan buat print ivalid
-        //buatlah fungsi mengecek apakah mahasiswa sudah terdaftar di kelas tersebut dan buat print ivalid
+
+
+
+
+
+
+
+
 
         for(int i = 0; i < daftarEnrollments.size(); i++){
             for(int j = 0; j < daftarMahasiswa.size(); j++){
-                if(daftarEnrollments.get(i).getNim().equals(daftarMahasiswa.get(j).getNim())){
-                    
-                }
+            if(!daftarEnrollments.get(i).getNim().equals(daftarMahasiswa.get(j).getNim())){
+                System.out.println("invalid student|"+ daftarMahasiswa.get(j).getNim());
+                break;
+            }
             }
         }
 
+
+
+        for(int i = 0; i < daftarEnrollments.size(); i++){
+            for(int j = 0; j < daftarMataKuliah.size(); j++){
+                if(!daftarEnrollments.get(i).getCodeCourse().equals(daftarMataKuliah.get(j).getCodeCourse())){
+                    System.out.println("invalid course|"+ daftarMataKuliah.get(j).getCodeCourse());
+                    break;
+                }
+            }
+        }
 
         for(int i = 0; i < daftarMataKuliah.size(); i++){
             daftarMataKuliah.get(i).DisplayCourse();
