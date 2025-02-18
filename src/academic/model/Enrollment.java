@@ -10,11 +10,13 @@ public class Enrollment {
     String TahunAjaran;
     String Semester;
     String nilai = "None";
+    Boolean cek = false;
+
 
     Student student;
     Course course;
 
-    public Enrollment(String Nim, String CodeCourse, String TahunAjaran, String Semester){
+    public Enrollment(String CodeCourse, String Nim, String TahunAjaran, String Semester){
         this.Nim = Nim;
         this.CodeCourse = CodeCourse;
         this.TahunAjaran = TahunAjaran;
@@ -41,14 +43,23 @@ public class Enrollment {
         this.student = student;
     }
 
+    public void cekValid(Boolean cek){
+        this.cek = cek;
+    }
+
+    public Boolean getValid(){
+        return this.cek;
+    }
+
     public void DisplayEnrollment(){
-        System.out.println(this.Nim+"|"+this.CodeCourse + "|" + this.TahunAjaran + "|" + this.Semester + "|" + this.nilai);
+        System.out.println(this.CodeCourse+"|"+this.Nim + "|" + this.TahunAjaran + "|" + this.Semester + "|" + this.nilai);
     }
 
 
     public void setStudents(Student student){
         this.student = student;
     }
+
 
 
 

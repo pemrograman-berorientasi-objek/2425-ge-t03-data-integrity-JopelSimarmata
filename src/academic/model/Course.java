@@ -15,6 +15,7 @@ public class Course {
         this.namaMK = namaMK;
         this.sks = sks;
         this.grade = grade;
+        
     }
 
     public String getNamaMK(){
@@ -33,9 +34,13 @@ public class Course {
         return this.grade;
     }
 
+
+
     public void DisplayCourse(){
         System.out.println(this.codeCourse+"|"+this.namaMK + "|" + this.sks + "|" + this.grade);
     }
+
+
 
 
 

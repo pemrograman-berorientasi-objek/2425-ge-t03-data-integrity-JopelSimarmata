@@ -15,7 +15,7 @@ public class Driver2 {
     public static void main(String[] _args) {
 
         Scanner scn = new Scanner(System.in);
-        Boolean cek = true;
+        Boolean cek = false;
         
         ArrayList<Course> daftarMataKuliah = new ArrayList<>();
         ArrayList<Student> daftarMahasiswa = new ArrayList<>();
@@ -52,32 +52,39 @@ public class Driver2 {
             }
         }
 
+        // Check for duplicate enrollments and remove them
+        
 
+        for (int i = 0; i < daftarEnrollments.size(); i++) {
+            boolean validStudent = false;
+            boolean validCourse = false;
 
-
-
-
-
-
-
-
-        for(int i = 0; i < daftarEnrollments.size(); i++){
-            for(int j = 0; j < daftarMahasiswa.size(); j++){
-            if(!daftarEnrollments.get(i).getNim().equals(daftarMahasiswa.get(j).getNim())){
-                System.out.println("invalid student|"+ daftarMahasiswa.get(j).getNim());
+            for (int j = 0; j < daftarMahasiswa.size(); j++) {
+            if (daftarEnrollments.get(i).getNim().equals(daftarMahasiswa.get(j).getNim())) {
+                validStudent = true;
                 break;
             }
             }
-        }
 
+            for (int j = 0; j < daftarMataKuliah.size(); j++) {
+            if (daftarEnrollments.get(i).getCodeCourse().equals(daftarMataKuliah.get(j).getCodeCourse())) {
+                validCourse = true;
+                break;
+            }
+            }
 
-
-        for(int i = 0; i < daftarEnrollments.size(); i++){
-            for(int j = 0; j < daftarMataKuliah.size(); j++){
-                if(!daftarEnrollments.get(i).getCodeCourse().equals(daftarMataKuliah.get(j).getCodeCourse())){
-                    System.out.println("invalid course|"+ daftarMataKuliah.get(j).getCodeCourse());
-                    break;
-                }
+            if (!validStudent && !validCourse) {
+            if (!validStudent) {
+                System.out.println("invalid student|" + daftarEnrollments.get(i).getNim());
+                daftarEnrollments.remove(i);
+                i--;
+            }
+            if (!validCourse) {
+                System.out.println("invalid course|" + daftarEnrollments.get(i).getCodeCourse());
+                daftarEnrollments.remove(i);
+                i--;
+            }
+ // Adjust the index after removal
             }
         }
 

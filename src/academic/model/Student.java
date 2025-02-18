@@ -33,6 +33,8 @@ public class Student {
         return this.prodi;
     }
 
+
+
     public void DisplayStudent(){
         System.out.println(this.nim+"|"+this.nama + "|" + this.angkatan + "|" + this.prodi);
     }
