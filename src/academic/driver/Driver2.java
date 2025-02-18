@@ -54,7 +54,6 @@ public class Driver2 {
 
         // Check for duplicate enrollments and remove them
         
-
         for (int i = 0; i < daftarEnrollments.size(); i++) {
             boolean validStudent = false;
             boolean validCourse = false;
@@ -73,19 +72,18 @@ public class Driver2 {
             }
             }
 
-            if (!validStudent && !validCourse) {
+            if (!validStudent || !validCourse) {
+                if(!validStudent && !validCourse){
             if (!validStudent) {
                 System.out.println("invalid student|" + daftarEnrollments.get(i).getNim());
-                daftarEnrollments.remove(i);
-                i--;
             }
             if (!validCourse) {
                 System.out.println("invalid course|" + daftarEnrollments.get(i).getCodeCourse());
-                daftarEnrollments.remove(i);
-                i--;
             }
- // Adjust the index after removal
-            }
+            daftarEnrollments.remove(i);
+            i--; // Adjust the index after removal
+            } 
+        }
         }
 
         for(int i = daftarMataKuliah.size()-1; i >= 0; i--){
