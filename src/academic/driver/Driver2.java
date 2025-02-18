@@ -88,7 +88,7 @@ public class Driver2 {
             }
         }
 
-        for(int i = 0; i < daftarMataKuliah.size(); i++){
+        for(int i = daftarMataKuliah.size()-1; i >= 0; i--){
             daftarMataKuliah.get(i).DisplayCourse();
         }
 
